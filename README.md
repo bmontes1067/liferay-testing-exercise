@@ -1,0 +1,1 @@
+# liferay-testing-exercise
