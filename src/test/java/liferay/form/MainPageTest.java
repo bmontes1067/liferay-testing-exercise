@@ -9,12 +9,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 /**
  * This class contains all the tests related to the Liferay form page home page.
  *
- * @author BelÃ©n Montes Amarillas
+ * @author Belén Montes Amarillas
  */
 
 public class MainPageTest {
@@ -48,16 +50,28 @@ public class MainPageTest {
     }
 
     @Test
-    public void test_submit_form(){
+    public void testSubmitForm(){
         MainPage.nameInput.sendKeys("Belen Montes");
         MainPage.datePickerButton.click();
-        sleep(3600);
-        MainPage.todayDatePickerButton.click();
+        MainPage.todayDatePickerButton.waitUntil(visible,3600).click();
         MainPage.additionalInfoTextarea.sendKeys("This is a test");
         MainPage.submitButton.click();
-        MainPage.formName.shouldHave(text("Information sent"));
-        MainPage.descriptionField.shouldHave(text("Information sent successfully!"));
+        MainPage.formName.shouldBe(text("Information sent"));
+        MainPage.formDescription.shouldBe(text("Information sent successfully!"));
 
 
+    }
+
+    @Test
+    public void testChangeFormLanguage(){
+        MainPage.languagePickerButton.click();
+        MainPage.changeLanguageButton.waitUntil(visible, 3600).click();
+        MainPage.formName.shouldHave(text("Este é um Liferay Forms"));
+        MainPage.formDescription.shouldBe(text("E aqui temos a descrição do nosso forms"));
+        MainPage.brazilNameInputLabel.shouldBe(visible);
+        MainPage.brazilNameInputLabel.shouldBe(text("Qual é o seu nome?"));
+        MainPage.brazilBirthInputLabel.shouldBe(text("Qual é a data do seu nascimento?"));
+        MainPage.brazilAdditionalInfoTextareaLabel.shouldBe(text("Porque você ingressou na área de testes?"));
+        MainPage.submitButton.shouldBe(text("Submeter"));
     }
 }

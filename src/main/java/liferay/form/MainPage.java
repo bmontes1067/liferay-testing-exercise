@@ -20,6 +20,17 @@ public class MainPage {
     public static final String URL = "https://forms.liferay.com/web/forms/shared/-/form/122548";
 
     /**
+     * The language picker
+     */
+    public static final SelenideElement languagePickerButton = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[1]/div/div/div/button"));
+
+    /**
+     * The USA/Brazil option on the language picker
+     */
+
+    public static final SelenideElement changeLanguageButton = $(byXpath("/html/body/div[1]/div/div/div/ul/li/a"));
+
+    /**
      * The form name.
      */
     public static final SelenideElement formName = $(byClassName("ddm-form-name"));
@@ -27,7 +38,7 @@ public class MainPage {
     /**
      * The description field.
      */
-    public static final SelenideElement descriptionField = $(byClassName("ddm-form-description"));
+    public static final SelenideElement formDescription = $(byClassName("ddm-form-description"));
 
     /**
      * The form page title
@@ -48,7 +59,8 @@ public class MainPage {
     /**
      * The label for Name input field
      */
-    public static final SelenideElement nameInputLabel = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[1]/div/div[1]/div/div[2]/div/div/label"));
+    public static final SelenideElement usaNameInputLabel = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[1]/div/div[1]/div/div[2]/div/div/label"));
+    public static final SelenideElement brazilNameInputLabel = $(byXpath("/html/body/div[3]/div/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[1]/div/div[1]/div/div[2]/div/div/label"));
 
     /**
      * The Name input field
@@ -58,7 +70,8 @@ public class MainPage {
     /**
      * The label for Birth input field
      */
-    public static final SelenideElement birthInputLabel = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[1]/div/div[2]/div/div[2]/div/div/label"));
+    public static final SelenideElement usaBirthInputLabel = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[1]/div/div[2]/div/div[2]/div/div/label"));
+    public static final SelenideElement brazilBirthInputLabel = $(byXpath("/html/body/div[3]/div/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[1]/div/div[2]/div/div[2]/div/div/label"));
 
     /**
      * The Birth input field
@@ -73,12 +86,13 @@ public class MainPage {
     /**
      * The today button (date picker)
      */
-    public static final SelenideElement todayDatePickerButton= $(byXpath("/html/body/div[4]/div/div/div/div[1]/div/div[3]/button[2]"));
+    public static final SelenideElement todayDatePickerButton= $(byXpath("/html/body/div[3]/div/div/div/div[1]/div/div[3]/button[2]"));
 
     /**
      * The label for additionalInfo textarea field
      */
-    public static final SelenideElement additionalInfoTextareaLabel = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div[2]/div/div/label"));
+    public static final SelenideElement usaAdditionalInfoTextareaLabel = $(byXpath("/html/body/div[1]/div[1]/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div[2]/div/div/label"));
+    public static final SelenideElement brazilAdditionalInfoTextareaLabel = $(byXpath("/html/body/div[3]/div/div/div/div/div/div/form/div[3]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div[2]/div/div/label"));
 
     /**
      * The additionalInfo textarea field
