@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 /**
  * This class contains all the tests related to the Liferay form page home page.
  *
- * @author Belén Montes Amarillas
+ * @author BelÃ©n Montes Amarillas
  */
 
 public class MainPageTest {
@@ -31,7 +31,7 @@ public class MainPageTest {
 
     /**
      * Sets up. Before each test method it performs three main operations:
-     * - Selects firefox as browser to be employed in the tests.
+     * - Selects Chrome as browser to be employed in the tests.
      * - Set the browser configuration to start the tests with the windows maximized.
      * - Open the relevant website where the tests from this class are going to be performed.
      */
@@ -66,12 +66,12 @@ public class MainPageTest {
     public void testChangeFormLanguage(){
         MainPage.languagePickerButton.click();
         MainPage.changeLanguageButton.waitUntil(visible, 3600).click();
-        MainPage.formName.shouldHave(text("Este é um Liferay Forms"));
-        MainPage.formDescription.shouldBe(text("E aqui temos a descrição do nosso forms"));
+        MainPage.formName.shouldHave(text("Este Ã© um Liferay Forms"));
+        MainPage.formDescription.shouldBe(text("E aqui temos a descriÃ§Ã£o do nosso forms"));
         MainPage.brazilNameInputLabel.shouldBe(visible);
-        MainPage.brazilNameInputLabel.shouldBe(text("Qual é o seu nome?"));
-        MainPage.brazilBirthInputLabel.shouldBe(text("Qual é a data do seu nascimento?"));
-        MainPage.brazilAdditionalInfoTextareaLabel.shouldBe(text("Porque você ingressou na área de testes?"));
+        MainPage.brazilNameInputLabel.shouldBe(text("Qual Ã© o seu nome?"));
+        MainPage.brazilBirthInputLabel.shouldBe(text("Qual Ã© a data do seu nascimento?"));
+        MainPage.brazilAdditionalInfoTextareaLabel.shouldBe(text("Porque vocÃª ingressou na Ã¡rea de testes?"));
         MainPage.submitButton.shouldBe(text("Submeter"));
     }
 }
